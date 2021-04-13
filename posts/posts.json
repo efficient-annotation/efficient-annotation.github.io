@@ -1,6 +1,6 @@
 [
   {
-    "path": "posts/2021-04-06-efficient-annotation-cookbook/",
+    "path": "posts/efficient-annotation-cookbook-for-image-classification/",
     "title": "Efficient Annotation Cookbook for Image Classification",
     "description": "Based on the paper \"Towards Good Practices for Efficiently Annotating Large-Scale Image Classification Datasets\", accepted by CVPR21 as Oral presentation.",
     "author": [
@@ -20,8 +20,8 @@
     "date": "2021-04-06",
     "categories": [],
     "contents": "\n      \n        Which images require more/fewer human annotation? Hover to see our model's opinion!\n      \n      \n        Paper (PDF)\n        Code\n        Video (TBA)\n        \n      \n    \n  ",
-    "preview": "posts/2021-04-06-efficient-annotation-cookbook/assets/teaser/colored_grid.png",
-    "last_modified": "2021-04-13T17:21:00-04:00",
+    "preview": "posts/efficient-annotation-cookbook-for-image-classification/assets/teaser/colored_grid.png",
+    "last_modified": "2021-04-13T18:36:03-04:00",
     "input_file": {},
     "preview_width": 1050,
     "preview_height": 760

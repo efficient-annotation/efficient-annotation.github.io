@@ -1,5 +1,5 @@
 ---
-title: "Posts"
+title: "Towards Efficient Annotation"
 site: distill::distill_website
 listing: posts
 ---
