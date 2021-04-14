@@ -129,7 +129,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["assets/paper_figures/plot_distraction_compare_cost_target_classes_precision.pdf","assets/paper_figures/plot_human_semi.pdf","assets/paper_figures/plot_imagenet100_top5.pdf","assets/paper_figures/plot_imagenet100.pdf","assets/paper_figures/plot_prior_change-10.pdf","assets/paper_figures/plot_prior_change-30.pdf","assets/paper_figures/plot_prototype_as_val.pdf","assets/paper_figures/plot_risk_change.pdf","assets/paper_figures/plot_self_none.pdf","assets/paper_figures/plot_semi_pitfall.pdf","assets/paper_figures/plot_semi_precision.pdf","assets/paper_figures/plot_semi.pdf","assets/paper_figures/plot_step_size_change.pdf","assets/paper_figures/plot_stopping.pdf","assets/paper_figures/plot_task_assignment_vis.pdf","assets/paper_figures/plot_task_assignment.pdf","assets/paper_figures/plot_unfinished.pdf","assets/paper_figures/plot_unfiorm_structured_noise_pseudolabel.pdf","assets/paper_figures/plot_worker_change.pdf","assets/teaser/colored_grid.png","assets/teaser/grid.png","assets/teaser/teaser.html","assets/thumbnail-4.png","assets/thumbnail-8.png","biblio.bib","efficient-annotation-cookbook_files/anchor-4.2.2/anchor.min.js","efficient-annotation-cookbook_files/bowser-1.9.3/bowser.min.js","efficient-annotation-cookbook_files/distill-2.2.21/template.v2.js","efficient-annotation-cookbook_files/header-attrs-2.7/header-attrs.js","efficient-annotation-cookbook_files/jquery-1.11.3/jquery.min.js","efficient-annotation-cookbook_files/popper-2.6.0/popper.min.js","efficient-annotation-cookbook_files/tippy-6.2.7/tippy-bundle.umd.min.js","efficient-annotation-cookbook_files/tippy-6.2.7/tippy-light-border.css","efficient-annotation-cookbook_files/tippy-6.2.7/tippy.css","efficient-annotation-cookbook_files/tippy-6.2.7/tippy.umd.min.js","efficient-annotation-cookbook_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["assets/paper_figures/plot_distraction_compare_cost_target_classes_precision.pdf","assets/paper_figures/plot_human_semi.pdf","assets/paper_figures/plot_imagenet100_top5.pdf","assets/paper_figures/plot_imagenet100.pdf","assets/paper_figures/plot_prior_change-10.pdf","assets/paper_figures/plot_prior_change-30.pdf","assets/paper_figures/plot_prototype_as_val.pdf","assets/paper_figures/plot_risk_change.pdf","assets/paper_figures/plot_self_none.pdf","assets/paper_figures/plot_semi_pitfall.pdf","assets/paper_figures/plot_semi_precision.pdf","assets/paper_figures/plot_semi.pdf","assets/paper_figures/plot_step_size_change.pdf","assets/paper_figures/plot_stopping.pdf","assets/paper_figures/plot_task_assignment_vis.pdf","assets/paper_figures/plot_task_assignment.pdf","assets/paper_figures/plot_unfinished.pdf","assets/paper_figures/plot_unfiorm_structured_noise_pseudolabel.pdf","assets/paper_figures/plot_worker_change.pdf","assets/teaser/colored_grid.png","assets/teaser/grid.png","assets/teaser/teaser.html","assets/thumbnail.png","biblio.bib","efficient-annotation-cookbook_files/anchor-4.2.2/anchor.min.js","efficient-annotation-cookbook_files/bowser-1.9.3/bowser.min.js","efficient-annotation-cookbook_files/distill-2.2.21/template.v2.js","efficient-annotation-cookbook_files/header-attrs-2.7/header-attrs.js","efficient-annotation-cookbook_files/jquery-1.11.3/jquery.min.js","efficient-annotation-cookbook_files/popper-2.6.0/popper.min.js","efficient-annotation-cookbook_files/tippy-6.2.7/tippy-bundle.umd.min.js","efficient-annotation-cookbook_files/tippy-6.2.7/tippy-light-border.css","efficient-annotation-cookbook_files/tippy-6.2.7/tippy.css","efficient-annotation-cookbook_files/tippy-6.2.7/tippy.umd.min.js","efficient-annotation-cookbook_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1601,7 +1601,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#how-to-aggregate-labels-ds-model">How to aggregate labels: DS model</a></li>
 <li><a href="#testbed-imagenet100-sandbox">Testbed: ImageNet100 Sandbox</a></li>
 </ul></li>
-<li><a href="#testbed">Testbed</a></li>
 <li><a href="#matters-of-model-learning">Matters of Model Learning</a>
 <ul>
 <li><a href="#online-labeling-is-a-semi-supervised-problem">Online-Labeling is a Semi-Supervised Problem</a></li>
@@ -1698,8 +1697,6 @@ Figure 1: Over-optimistic results from workers with uniform noise. Human workers
 </div>
 <p>We simulate the process of annotating ImageNet100 and perform various ablation on the system, spanning from models, workers and data itself. We end up being <strong>2.7x efficient (w/ 63% less annotations)</strong> w.r.t prior work <span class="citation" data-cites="Branson_2017_CVPR">(<a href="#ref-Branson_2017_CVPR" role="doc-biblioref">Branson, Van Horn, and Perona 2017</a>)</span> and <strong>6.7x efficient (w/ 85% less annotations)</strong> w.r.t. manual annotations <span class="citation" data-cites="dawid1979maximum">(<a href="#ref-dawid1979maximum" role="doc-biblioref">Dawid and Skene 1979</a>)</span>.</p>
 <p>In the following, we show how each component affect the final efficiency:</p>
-<h1 id="testbed">Testbed</h1>
-<p>We use different</p>
 <h1 id="matters-of-model-learning">Matters of Model Learning</h1>
 <h3 id="online-labeling-is-a-semi-supervised-problem">Online-Labeling is a Semi-Supervised Problem</h3>
 <p>During online-labeling, the goal is to infer true labels for all images in the dataset, making model learning akin to transductive learning <span class="citation" data-cites="joachims1999transductive">(<a href="#ref-joachims1999transductive" role="doc-biblioref">Joachims 1999</a>)</span>, where the test set is observed and can be used for learning. Thus, it is reasonable to expect efficiency gains if the dataset’s underlying structure is exploited by putting the unlabeled data to work, using semi-supervised learning. In Fig.<a href="#fig:semi-supervised">2</a> we perform <em>Peudolabel</em> and <em>Mixmatch</em> in online-labeling.</p>
@@ -1780,10 +1777,17 @@ Figure 8: We perform early stopping by monitoring the size of the finished set. 
 <p>We presented improved online-labeling methods for large multi-class datasets. In a realistically simulated experiment with 125k images and 100 labels from ImageNet, we observe a 2.7x reduction in annotations required w.r.t. prior work to achieve 80% top-1 label accuracy. Our framework goes on to achieve 87.4% top-1 accuracy at 0.98 labels per image. Along with our improvements, we leave open questions for future research. 1) Our simulation is not perfect and does not consider individual image difficulty, instead only modeling class confusion. 2) How does one accelerate labeling beyond semantic classes, such as classifying viewing angle of a car? 3) ImageNet has a clear label hierarchy, which can be utilized to achieve orthogonal gains <span class="citation" data-cites="van2018lean">(<a href="#ref-van2018lean" role="doc-biblioref">Van Horn et al. 2018</a>)</span> in the worker skill estimation 4) Going beyond classification is possible with the proposed model by appropriately modeling annotation likelihood as demonstrated in <span class="citation" data-cites="Branson_2017_CVPR">(<a href="#ref-Branson_2017_CVPR" role="doc-biblioref">Branson, Van Horn, and Perona 2017</a>)</span>. However, accelerating these with learning in the loop requires specific attention to detail per task, which is an exciting avenue for future work. 5) Finally, we discussed annotation at scale, where improvements in learning help significantly. How can these be translated to small datasets?</p>
 <h2 class="appendix" id="paper">Paper</h2>
 <div class="layout-chunk" data-layout="l-body-outset">
-<p><img src="assets/thumbnail-4.png" width="446" /></p>
+<p><img src="assets/thumbnail.png" width="885" /></p>
 </div>
-<p>This paper is accepted to CVPR2021 as Oral presentations.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p><strong>This paper is accepted to CVPR2021 as Oral presentations.</strong></p>
+<p>If you find this article useful or you use our code, please consider cite:</p>
+<pre><code>@inproceedings{good_practices,
+    title={Towards Good Practices for Efficiently Annotating Large-Scale Image Classification Datasets},
+    author={Yuan-Hong Liao and Amlan Kar and Sanja Fidler},
+    booktitle={CVPR},
+    year={2021}
+    }</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-Branson_2017_CVPR" class="csl-entry" role="doc-biblioentry">
 Branson, Steve, Grant Van Horn, and Pietro Perona. 2017. <span>“Lean Crowdsourcing: Combining Humans and Machines in an Online System.”</span> In <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>.

@@ -192,6 +192,16 @@ Along with our improvements, we leave open questions for future research.
 
 
 ```{r, layout="l-body-outset"}
-knitr::include_graphics("assets/thumbnail-4.png")
+knitr::include_graphics("assets/thumbnail.png")
 ```
-This paper is accepted to CVPR2021 as Oral presentations.
+**This paper is accepted to CVPR2021 as Oral presentations.**
+
+If you find this article useful or you use our code, please consider cite:
+```
+@inproceedings{good_practices,
+    title={Towards Good Practices for Efficiently Annotating Large-Scale Image Classification Datasets},
+    author={Yuan-Hong Liao and Amlan Kar and Sanja Fidler},
+    booktitle={CVPR},
+    year={2021}
+    }
+```
