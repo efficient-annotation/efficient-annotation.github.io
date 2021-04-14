@@ -1619,6 +1619,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul></li>
 <li><a href="#discussion">Discussion</a>
 <ul>
+<li><a href="#acknowledgments">Acknowledgments</a></li>
 <li><a href="#paper">Paper</a></li>
 </ul></li>
 </ul>
@@ -1775,6 +1776,9 @@ Figure 8: We perform early stopping by monitoring the size of the finished set. 
 </div>
 <h1 id="discussion">Discussion</h1>
 <p>We presented improved online-labeling methods for large multi-class datasets. In a realistically simulated experiment with 125k images and 100 labels from ImageNet, we observe a 2.7x reduction in annotations required w.r.t. prior work to achieve 80% top-1 label accuracy. Our framework goes on to achieve 87.4% top-1 accuracy at 0.98 labels per image. Along with our improvements, we leave open questions for future research. 1) Our simulation is not perfect and does not consider individual image difficulty, instead only modeling class confusion. 2) How does one accelerate labeling beyond semantic classes, such as classifying viewing angle of a car? 3) ImageNet has a clear label hierarchy, which can be utilized to achieve orthogonal gains <span class="citation" data-cites="van2018lean">(<a href="#ref-van2018lean" role="doc-biblioref">Van Horn et al. 2018</a>)</span> in the worker skill estimation 4) Going beyond classification is possible with the proposed model by appropriately modeling annotation likelihood as demonstrated in <span class="citation" data-cites="Branson_2017_CVPR">(<a href="#ref-Branson_2017_CVPR" role="doc-biblioref">Branson, Van Horn, and Perona 2017</a>)</span>. However, accelerating these with learning in the loop requires specific attention to detail per task, which is an exciting avenue for future work. 5) Finally, we discussed annotation at scale, where improvements in learning help significantly. How can these be translated to small datasets?</p>
+<h2 class="appendix" id="acknowledgments">Acknowledgments</h2>
+<p>This work was supported by ERA, NSERC, and DARPA XAI. SF acknowledges the Canada CIFAR AI Chair award at the Vector Institute.</p>
+<p>This webpage is based on Distill Template generated from <a href="https://rstudio.github.io/distill/">here</a></p>
 <h2 class="appendix" id="paper">Paper</h2>
 <div class="layout-chunk" data-layout="l-body-outset">
 <p><img src="assets/thumbnail.png" width="885" /></p>

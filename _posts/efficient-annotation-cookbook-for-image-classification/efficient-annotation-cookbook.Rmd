@@ -188,7 +188,13 @@ Along with our improvements, we leave open questions for future research.
 4) Going beyond classification is possible with the proposed model by appropriately modeling annotation likelihood as demonstrated in [@Branson_2017_CVPR]. However, accelerating these with learning in the loop requires specific attention to detail per task, which is an exciting avenue for future work.
 5) Finally, we discussed annotation at scale, where improvements in learning help significantly. How can these be translated to small datasets?
 
+## Acknowledgments {.appendix}
+This work was supported by ERA, NSERC, and DARPA XAI. SF acknowledges the Canada CIFAR AI Chair award at the Vector Institute.
+
+This webpage is based on Distill Template generated from [here](https://rstudio.github.io/distill/)
+
 ## Paper {.appendix}
+
 
 
 ```{r, layout="l-body-outset"}
