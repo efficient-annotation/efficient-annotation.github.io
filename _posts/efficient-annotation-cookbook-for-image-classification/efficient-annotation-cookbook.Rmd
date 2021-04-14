@@ -49,9 +49,9 @@ A common approach used in practice is to query humans to get a fixed number of l
 
 
 
-# How to aggregate labels?
+# Background and Testbed
 
-### Background: DS model
+### How to aggregate labels: DS model
 
 The Dawid-Skene model views the annotation process as jointly inferring true labels and worker skills. 
 The joint probability of true labels $\mathcal{Y}$, annotations $\mathcal{Z}$, and worker skills $\mathcal{W}$ is defined as the product of the prior of true labels and worker skills and the posterior of the annotations.
@@ -70,10 +70,30 @@ $$
 Prior work[@Branson_2017_CVPR] moves to an online setting and improves DS model by using machine learning model predictions as image prior $p(y_i)$, opening up the window of incorporating machine learner and DS model.
 However, they only perform experiments in the small-scale setting.
 We ask ourselves: **How many number of annotations can we possibly reduce to annotate a large scale image classification dataset, such as ImageNet?**
+
+### Testbed: ImageNet100 Sandbox
+Evaluating and ablating multi-class label annotation efficiency at scale requires large datasets with diverse and relatively clean labels. We construct multiple subsets of the ImageNet dataset [@russakovsky2015imagenet] for our experiments. The following table shows the details of different subset in ImageNet100 Sandbox. 
+
+| Dataset         	| #Images 	| #Classes 	| Worker Acc. 	| Fine-Grained 	|
+|-----------------	|:-------:	|:--------:	|:-----------:	|:------------:	|
+| Commodity       	|  20140  	|    16    	|     0.76    	|              	|
+| Vertebrate      	|  23220  	|    18    	|     0.72    	|              	|
+| Insect + Fungus 	|  16770  	|    13    	|     0.65    	|       V      	|
+| Dog             	|  22704  	|    19    	|     0.43    	|       V      	|
+| ImageNet100     	|  125689 	|    100   	|     0.7     	|       V      	|
+
+Prior work [@hua2013collaborative; @long2015multi] simulate workers as confusion matrices. Class confusion was modeled with symmetric uniform noise, which can result in *over-optimistic* performance estimates. Human annotators exhibit asymmetric and structured confusion *i.e.*, classes get confused with each other differently. In Fig.\@ref(fig:structured-workers), we compares the number of annotations per image in simulation using uniform label noise vs. structured label noise that we crowdsource. We see large gaps between the two. This arises particularly when using learnt models in the loop, due to sensitivity to noisy labels coming from structured confusion in the workers. Therefore, we use simualted workers with structured noise in ImageNet100 Sandbox.
+
+```{r structured-workers, fig.cap="Over-optimistic results from workers with uniform noise. Human workers tend to make *structured* mistakes. Simulated workers with uniform label noise (blue) can result in over-optimistic annotation performance. Experiments under workers with structured noise reflect real-life performance better.", echo=FALSE, layout="l-body-outset"}
+knitr::include_graphics("assets/paper_figures/plot_unfiorm_structured_noise_pseudolabel.pdf")
+```
+
+
 We simulate the process of annotating ImageNet100 and perform various ablation on the system, spanning from models, workers and data itself.
 We end up being **2.7x efficient (w/ 63% less annotations)** w.r.t prior work [@Branson_2017_CVPR] and **6.7x efficient (w/ 85% less annotations)** w.r.t. manual annotations [@dawid1979maximum].
 
 In the following, we show how each component affect the final efficiency:
+
 
 # Matters of Model Learning
 
